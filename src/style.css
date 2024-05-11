@@ -1,14 +1,17 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 .card {
-  width: 300px;
-  height: 400px;
+  width: 200px;
+  height: 300px;
   border: 1px solid black;
   border-radius: 10px;
-  margin: 40px;
+  margin: 40px auto; /* Cambia el margen lateral a auto */
   display: inline-block;
   text-align: center;
   font-size: 25px;
+  background-color: white;
+  position: relative;
 }
+
 .heart {
   color: red;
 }
@@ -26,16 +29,16 @@
 }
 
 .number {
+  font-size: 3em;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2em;
 }
 
 .symbol {
+  font-size: 3em;
   position: absolute;
-  font-size: 2em;
 }
 
 .top-left {
@@ -46,4 +49,7 @@
 .bottom-right {
   bottom: 10px;
   right: 10px;
+}
+body {
+  background-color: green;
 }

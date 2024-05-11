@@ -1,5 +1,8 @@
 import "bootstrap";
 import "./style.css";
+document.addEventListener("DOMContentLoaded", function() {
+  generateCard();
+});
 
 function generateCard() {
   let numbers = [
@@ -20,7 +23,7 @@ function generateCard() {
   let symbols = ["♥", "♠", "♣", "♦"];
   let cardNumber = numbers[Math.floor(Math.random() * numbers.length)];
   let cardSymbol = symbols[Math.floor(Math.random() * symbols.length)];
-  console.log(cardNumber);
+
   let carta = document.getElementById("carta");
 
   let numberElement = carta.querySelector(".number");
@@ -30,21 +33,19 @@ function generateCard() {
   numberElement.innerText = cardNumber;
   topSymbol.innerText = cardSymbol;
   bottomSymbol.innerText = cardSymbol;
-  carta.innerHTML = cardNumber + " " + cardSymbol;
-  carta.className = "card " + cardSymbol.toLowerCase();
-  carta.classList.remove("heart", "spade", "club", "diamond");
-  if (cardSymbol === "♥") {
-    carta.classList.add("heart");
-  } else if (cardSymbol === "♠") {
-    carta.classList.add("spade");
-  } else if (cardSymbol === "♣") {
-    carta.classList.add("club");
-  } else if (cardSymbol === "♦") {
-    carta.classList.add("diamond");
+  if (cardSymbol === "♥" || cardSymbol === "♦") {
+    topSymbol.style.color = "red";
+    bottomSymbol.style.color = "red";
+  } else {
+    topSymbol.style.color = "black";
+    bottomSymbol.style.color = "black";
   }
 }
-
-window.onload = generateCard;
-
-let generarCartaButton = document.getElementById("generarCarta");
-generarCartaButton.addEventListener("click", generateCard);
+window.onload = function() {
+  let generarCartaButton = document.getElementById("generarCarta");
+  generarCartaButton.addEventListener("click", generateCard);
+};
+function generateNewCard() {
+  generateCard();
+}
+setInterval(generateNewCard, 5000);
