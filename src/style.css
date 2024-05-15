@@ -2,16 +2,18 @@
 .card {
   width: 200px;
   height: 300px;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin: 40px auto; /* Cambia el margen lateral a auto */
-  display: inline-block;
-  text-align: center;
-  font-size: 25px;
-  background-color: white;
-  position: relative;
+  border: 1px solid #000;
+  margin-bottom: 20px;
 }
-
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+}
 .heart {
   color: red;
 }
@@ -29,7 +31,7 @@
 }
 
 .number {
-  font-size: 3em;
+  font-size: 2em;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -37,7 +39,7 @@
 }
 
 .symbol {
-  font-size: 3em;
+  font-size: 2em;
   position: absolute;
 }
 
@@ -52,4 +54,12 @@
 }
 body {
   background-color: green;
+}
+.centrado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  text-align: center;
 }

@@ -15,10 +15,10 @@ function generateCard() {
     "8",
     "9",
     "10",
-    "Rey",
-    "Reina",
-    "Jota",
-    "As"
+    "K",
+    "Q",
+    "J",
+    "A"
   ];
   let symbols = ["♥", "♠", "♣", "♦"];
   let cardNumber = numbers[Math.floor(Math.random() * numbers.length)];
